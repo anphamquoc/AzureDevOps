@@ -14,12 +14,8 @@ public class SiteService : ISiteService
 
     public Dictionary<int, string> GetAllPermissionKind()
     {
-        var permissionKind = new Dictionary<int, string>();
-
-        foreach (var permission in Enum.GetValues(typeof(PermissionKind)))
-            permissionKind.Add((int)permission, permission.ToString());
-
-        return permissionKind;
+        return Enum.GetValues(typeof(PermissionKind)).Cast<object?>()
+            .ToDictionary(permission => (int)permission, permission => permission.ToString());
     }
 
     public void CreateNewPermissionLevel(string permissionName, IEnumerable<PermissionKind> roles)
