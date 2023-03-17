@@ -38,7 +38,6 @@ public class SearchService : ISearchService
         foreach (var resultRow in results.Value[0].ResultRows)
         {
             var resultItem = new Dictionary<string, string>();
-            // Access the desired properties, such as the "Title" field
             var title = resultRow["Title"].ToString();
             var path = resultRow["Path"].ToString();
 
@@ -62,7 +61,6 @@ public class SearchService : ISearchService
         var keywordQuery = new KeywordQuery(_ctx)
         {
             TrimDuplicates = true,
-            // Source id of local people results
             SourceId = Guid.Parse("b09a7990-05ea-4af9-81ef-edfab16c4e31"),
             QueryText = queryText
         };
