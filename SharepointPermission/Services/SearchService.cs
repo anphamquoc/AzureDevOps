@@ -28,7 +28,7 @@ public class SearchService : ISearchService
             RowLimit = 10
         };
         // Remove duplicates from search results or not
-        // query.TrimDuplicates = false;
+        query.TrimDuplicates = true;
 
         var searchExecutor = new SearchExecutor(_ctx);
         ClientResult<ResultTableCollection> results = searchExecutor.ExecuteQuery(query);
