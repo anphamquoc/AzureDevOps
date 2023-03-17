@@ -3,11 +3,9 @@
 name: Publish 🚀
 
 on:
-  workflow_dispatch:
   push:
     branches:
       - main
-    workflow_dispatch:
 
 env:
   AZURE_WEBAPP_NAME: an-backend-app
