@@ -9,8 +9,8 @@ on:
       - main
     workflow_dispatch:
 
-permission:
-  contents: read
+  permissions:
+    contents: read
 
 env:
   AZURE_WEBAPP_NAME: an-backend-app
