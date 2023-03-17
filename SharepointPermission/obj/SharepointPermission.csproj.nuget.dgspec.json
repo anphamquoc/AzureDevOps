@@ -52,6 +52,10 @@
               "target": "Package",
               "version": "[3.0.1, )"
             },
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[17.6.0-preview-20230223-05, )"
+            },
             "Microsoft.Office.Server.14": {
               "target": "Package",
               "version": "[14.0.0, )"
@@ -67,6 +71,10 @@
             "Microsoft.Sharepoint.Client.Runtime": {
               "target": "Package",
               "version": "[15.0.4711.1000, )"
+            },
+            "NUnit": {
+              "target": "Package",
+              "version": "[3.13.3, )"
             },
             "PnP.Framework": {
               "target": "Package",
