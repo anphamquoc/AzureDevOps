@@ -19,7 +19,7 @@ public class CalculatorTests
     [TestCase(20, -10)]
     public void TestAddTwoNumbers(int firstNumber, int secondNumber)
     {
-        Assert.That(TestingService.AddTwoNumbers(FirstNumber, SecondNumber), Is.EqualTo(FirstNumber + SecondNumber));
+        Assert.That(TestingService.AddTwoNumbers(FirstNumber, SecondNumber), Is.EqualTo(FirstNumber - SecondNumber));
     }
 
     [Test]
