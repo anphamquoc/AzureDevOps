@@ -10,7 +10,6 @@ namespace SharepointPermission.Controllers;
 public class PermissionLevelController : ControllerBase
 {
     private readonly ISiteService _siteService;
-
     public PermissionLevelController(ISiteService siteRepository)
     {
         _siteService = siteRepository;
