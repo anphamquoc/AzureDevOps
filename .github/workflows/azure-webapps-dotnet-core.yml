@@ -48,6 +48,9 @@ jobs:
       - name: Publish
         run: dotnet publish ./SharepointPermission.sln --configuration Release --no-build --output '${{ env.AZURE_WEBAPP_PACKAGE_PATH }}'
 
+      - name: Install dotnet tool
+        run: dotnet tool install --global dotnet-ef
+
       - name: Update database migration
         run:  dotnet ef database update --project ./SharepointPermission/SharepointPermission.csproj
         
