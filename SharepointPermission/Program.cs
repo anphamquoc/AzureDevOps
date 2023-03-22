@@ -1,4 +1,6 @@
+using Microsoft.EntityFrameworkCore;
 using Microsoft.SharePoint.Client;
+using SharepointPermission.Entities;
 using SharepointPermission.Interfaces;
 using SharepointPermission.Provider;
 using SharepointPermission.Services;
@@ -26,6 +28,10 @@ builder.Services.AddScoped<IListService, ListService>();
 builder.Services.AddScoped<ISiteService, SiteService>();
 builder.Services.AddScoped<IUserProfileService, UserProfileService>();
 builder.Services.AddScoped<ISearchService, SearchService>();
+builder.Services.AddDbContext<MyDbContext>(options =>
+{
+    options.UseSqlServer(builder.Configuration.GetConnectionString("MyDB"));
+});
 
 var app = builder.Build();
 

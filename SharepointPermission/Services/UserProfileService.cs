@@ -1,16 +1,25 @@
 using Microsoft.SharePoint.Client;
 using Microsoft.SharePoint.Client.UserProfiles;
+using SharepointPermission.Entities;
 using SharepointPermission.Interfaces;
+using User = SharepointPermission.Entities.User;
 
 namespace SharepointPermission.Services;
 
 public class UserProfileService : IUserProfileService
 {
     private readonly ClientContext _ctx;
+    private readonly MyDbContext _dbContext;
 
-    public UserProfileService(ClientContext ctx)
+    public UserProfileService(ClientContext ctx, MyDbContext dbContext)
     {
         _ctx = ctx;
+        _dbContext = dbContext;
+    }
+
+    public List<User> GetAllUsers()
+    {
+        return _dbContext.Users.ToList();
     }
 
     public void UpdateUserPropertySingleValue(string accountName, Dictionary<string, string> valuesUpdated)

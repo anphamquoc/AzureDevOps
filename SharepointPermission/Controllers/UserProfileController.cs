@@ -14,6 +14,20 @@ public class UserProfileController : ControllerBase
         _userProfileService = userProfileService;
     }
 
+    [HttpGet("User")]
+    public IActionResult GetAllUsers()
+    {
+        try
+        {
+            var result = _userProfileService.GetAllUsers();
+            return Ok(result);
+        }
+        catch (Exception e)
+        {
+            return StatusCode(StatusCodes.Status500InternalServerError, e.Message);
+        }
+    }
+
     [HttpGet]
     public IActionResult ListSomePropertiesOfAllUsers()
     {
