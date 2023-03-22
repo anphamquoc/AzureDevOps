@@ -1,5 +1,3 @@
-# CD Process
-
 name: Publish 🚀
 
 on:
@@ -56,3 +54,5 @@ jobs:
           app-name: ${{ env.AZURE_WEBAPP_NAME }}
           publish-profile: ${{ secrets.AZURE_PUBLISH_PROFILE }}
           package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
+      - name: Update database migration
+        run: dotnet ef database update --project ./SharepointPermission.sln
