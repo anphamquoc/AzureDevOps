@@ -49,7 +49,7 @@ jobs:
         run: dotnet publish ./SharepointPermission.sln --configuration Release --no-build --output '${{ env.AZURE_WEBAPP_PACKAGE_PATH }}'
 
       - name: Update database migration
-        run: dotnet ef database update --project ./SharepointPermission.sln
+        run:  dotnet ef database update --project ./SharepointPermission/SharepointPermission.csproj
         
       - name: Deployment
         uses: azure/webapps-deploy@v2
