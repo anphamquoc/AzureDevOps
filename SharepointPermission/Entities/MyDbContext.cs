@@ -11,6 +11,7 @@ public class MyDbContext : DbContext
     #region DbSet
 
     public DbSet<User> Users { get; set; }
+    public DbSet<Transaction> Transactions { get; set; }
 
     #endregion
 }
