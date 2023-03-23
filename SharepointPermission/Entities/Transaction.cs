@@ -9,7 +9,10 @@ public class Transaction
 
     [Required] public string CreditCardNumber { get; set; }
 
+    [Required] public string CreditCardType { get; set; }
+
     public int Total { get; set; }
+
 
     [ForeignKey("UserId")] [Required] public int UserId { get; set; }
 
